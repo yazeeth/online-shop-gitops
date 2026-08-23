@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: online-shop-frontend
+  namespace: online-shop
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: online-shop-frontend
+
+  template:
+    metadata:
+      labels:
+        app: online-shop-frontend
+
+    spec:
+      containers:
+        - name: frontend
+          image: yazeeth/onlineshop-frontend:v1.0.3
+
+          ports:
+            - containerPort: 5173
+
+          envFrom:
+            - configMapRef:
+                name: online-shop-frontend-config
