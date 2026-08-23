@@ -9,6 +9,9 @@ resources:
   - postgres-service.yaml
   - postgres-statefulset.yaml
   - backend-migration-job.yaml
+  - frontend-configmap.yaml
+  - frontend-deployment.yaml
+  - frontend-service.yaml
 #  - backend-secret.example.yaml
 #  - postgres-secret.example.yaml
 

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: online-shop-frontend-config
+  namespace: online-shop
+
+data:
+  VITE_API_PROXY_TARGET: http://online-shop-backend:5050
