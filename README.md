@@ -266,17 +266,21 @@ This confirms the request reaches the backend and the backend can query PostgreS
 
 ## Test Frontend
 
-Forward the frontend Service:
+The frontend is exposed through a Kubernetes `NodePort` for the local Kind cluster.
 
-```bash
-kubectl port-forward svc/online-shop-frontend 5173:5173 -n online-shop
-```
-
-Open:
+Open the application in a browser:
 
 ```text
-http://localhost:5173
+http://localhost:30173
 ```
+
+Verify the frontend Service:
+
+```bash
+kubectl get svc online-shop-frontend -n online-shop
+```
+
+The Service exposes container port `5173` through NodePort `30173`.
 
 The frontend Vite proxy sends `/api` and `/uploads` requests to:
 
@@ -284,7 +288,19 @@ The frontend Vite proxy sends `/api` and `/uploads` requests to:
 http://online-shop-backend:5050
 ```
 
-The Kubernetes Service name is used for in-cluster communication rather than `localhost`.
+The backend Service name is used for in-cluster communication rather than `localhost`.
+
+For troubleshooting, the frontend can also be accessed with port-forwarding:
+
+```bash
+kubectl port-forward svc/online-shop-frontend 5173:5173 -n online-shop
+```
+
+Then open:
+
+```text
+http://localhost:5173
+```
 
 ## Useful Troubleshooting Commands
 
