@@ -4,8 +4,8 @@ kind: Kustomization
 resources:
   - ../../base
 
-images:
-  - name: yazeeth/onlineshop-backend
-    newTag: v1.0.3
-  - name: yazeeth/onlineshop-frontend
-    newTag: v1.0.3
+# images:
+#   - name: yazeeth/onlineshop-backend
+#     newTag: v1.0.3
+#   - name: yazeeth/onlineshop-frontend
+#     newTag: v1.0.3
