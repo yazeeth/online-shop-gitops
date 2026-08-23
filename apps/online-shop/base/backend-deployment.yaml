@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: online-shop-backend
+  namespace: online-shop
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: online-shop-backend
+
+  template:
+    metadata:
+      labels:
+        app: online-shop-backend
+
+    spec:
+      containers:
+        - name: backend
+          image: yazeeth/onlineshop-backend:v1.0.3
+          ports:
+            - containerPort: 5050
+          envFrom:
+            - configMapRef:
+                name: online-shop-backend-config
+            - secretRef:
+                name: online-shop-backend-secret

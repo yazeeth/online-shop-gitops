@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+
+metadata:
+  name: online-shop-backend-migration
+  namespace: online-shop
+
+spec:
+  template:
+    metadata:
+      labels:
+        app: online-shop-backend-migration
+
+    spec:
+      restartPolicy: Never
+
+      containers:
+        - name: migration
+          image: yazeeth/onlineshop-backend:v1.0.3
+
+          envFrom:
+            - secretRef:
+                name: online-shop-backend-secret
+
+          command:
+            - npm
+            - run
+            - db:migrate

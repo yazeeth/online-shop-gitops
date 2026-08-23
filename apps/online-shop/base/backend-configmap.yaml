@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: online-shop-backend-config
+  namespace: online-shop
+
+data:
+  PORT: "5050"
+  FRONTEND_URL: "http://localhost:5173"
