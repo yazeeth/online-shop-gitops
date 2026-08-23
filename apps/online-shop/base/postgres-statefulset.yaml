@@ -4,6 +4,8 @@ kind: StatefulSet
 metadata:
   name: postgres
   namespace: online-shop
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 
 spec:
   serviceName: postgres

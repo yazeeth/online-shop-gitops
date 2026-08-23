@@ -4,6 +4,8 @@ kind: Deployment
 metadata:
   name: online-shop-frontend
   namespace: online-shop
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 
 spec:
   replicas: 1
