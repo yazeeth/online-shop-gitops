@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: yazeeth/onlineshop-backend:v1.0.4
+          image: yazeeth/onlineshop-backend:v1.0.5
           ports:
             - containerPort: 5050
           envFrom:
