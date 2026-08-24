@@ -42,7 +42,7 @@ spec:
           command: ["/bin/sh", "-c"]
           args:
             - |
-              source /vault/secrets/config
+              . /vault/secrets/config
               exec npm start
 
           envFrom:
