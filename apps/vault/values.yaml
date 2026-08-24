@@ -1,0 +1,34 @@
+global:
+  enabled: true
+
+server:
+  enabled: true
+  replicas: 1
+
+  service:
+    enabled: true
+    type: ClusterIP
+
+  dataStorage:
+    enabled: true
+    size: 5Gi
+    storageClass: local-path
+
+  standalone:
+    enabled: false
+
+  ha:
+    enabled: true
+    replicas: 1
+
+    raft:
+      enabled: true
+      setNodeId: true
+
+injector:
+  enabled: true
+  replicas: 1
+
+ui:
+  enabled: true
+  serviceType: ClusterIP
