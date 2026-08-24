@@ -19,14 +19,24 @@ spec:
       labels:
         app: online-shop-backend
 
+      annotations:
+        vault.hashicorp.com/agent-inject: "true"
+        vault.hashicorp.com/role: "online-shop"
+        vault.hashicorp.com/agent-inject-secret-database-url: "secret/data/online-shop"
+        vault.hashicorp.com/agent-inject-template-database-url: |
+          {{- with secret "secret/data/online-shop" -}}
+          {{ .Data.data.DATABASE_URL }}
+          {{- end }}
+
     spec:
+      serviceAccountName: online-shop-backend
+
       containers:
         - name: backend
           image: yazeeth/onlineshop-backend:v1.0.5
           ports:
             - containerPort: 5050
+
           envFrom:
             - configMapRef:
                 name: online-shop-backend-config
-            - secretRef:
-                name: online-shop-backend-secret
