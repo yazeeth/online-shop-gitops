@@ -36,6 +36,11 @@ spec:
           image: yazeeth/onlineshop-backend:v1.0.5
           ports:
             - containerPort: 5050
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              export DATABASE_URL="$(cat /vault/secrets/database-url)"
+              exec npm start
 
           envFrom:
             - configMapRef:
