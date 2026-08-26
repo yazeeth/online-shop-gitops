@@ -6,6 +6,7 @@ metadata:
   namespace: online-shop
 
 spec:
+  type: ClusterIP
   selector:
     app: online-shop-backend
 

@@ -9,7 +9,8 @@ spec:
   ingressClassName: traefik
 
   rules:
-    - http:
+    - host: store.yazeeth.org.lk
+      http:
         paths:
           - path: /api
             pathType: Prefix
