@@ -12,6 +12,7 @@ resources:
   - frontend-configmap.yaml
   - frontend-deployment.yaml
   - frontend-service.yaml
+  - backend-uploads-pvc.yaml
 #  - backend-secret.example.yaml
 #  - postgres-secret.example.yaml
 

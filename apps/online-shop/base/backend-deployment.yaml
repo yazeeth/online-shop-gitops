@@ -44,7 +44,13 @@ spec:
             - |
               . /vault/secrets/config
               exec npm start
-
+          volumeMounts:
+            - name: product-uploads
+              mountPath: /app/uploads
           envFrom:
             - configMapRef:
                 name: online-shop-backend-config
+      volumes:
+        - name: product-uploads
+          persistentVolumeClaim:
+            claimName: online-shop-backend-uploads
