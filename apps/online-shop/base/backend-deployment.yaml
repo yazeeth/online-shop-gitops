@@ -5,7 +5,7 @@ metadata:
   name: online-shop-backend
   namespace: online-shop
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "0"
 
 spec:
   replicas: 2
