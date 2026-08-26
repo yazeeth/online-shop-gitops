@@ -6,7 +6,7 @@ metadata:
   namespace: online-shop
 
 spec:
-  type: NodePort
+  type: ClusterIP
 
   selector:
     app: online-shop-frontend
@@ -14,4 +14,3 @@ spec:
   ports:
     - port: 5173
       targetPort: 5173
-      nodePort: 30173
