@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: online-shop-ingress
+  namespace: online-shop
+
+spec:
+  ingressClassName: traefik
+
+  rules:
+    - http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: online-shop-backend
+                port:
+                  number: 5050
+
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: online-shop-frontend
+                port:
+                  number: 5173

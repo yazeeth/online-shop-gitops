@@ -13,6 +13,7 @@ resources:
   - frontend-deployment.yaml
   - frontend-service.yaml
   - backend-uploads-pvc.yaml
+  - ingress.yaml
 #  - backend-secret.example.yaml
 #  - postgres-secret.example.yaml
 
