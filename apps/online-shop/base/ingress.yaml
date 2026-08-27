@@ -9,8 +9,8 @@ spec:
   ingressClassName: traefik
 
   rules:
-    - host: store.yazeeth.org.lk
-      http:
+    # Temporarily hostless until host: store.yazeeth.org.lk is active
+    - http:
         paths:
           - path: /api
             pathType: Prefix
