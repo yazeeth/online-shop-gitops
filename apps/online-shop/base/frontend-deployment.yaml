@@ -25,7 +25,7 @@ spec:
           image: yazeeth/onlineshop-frontend:v1.0.5
 
           ports:
-            - containerPort: 5173
+            - containerPort: 80
 
           envFrom:
             - configMapRef:

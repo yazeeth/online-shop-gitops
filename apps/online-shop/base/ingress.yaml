@@ -26,4 +26,4 @@ spec:
               service:
                 name: online-shop-frontend
                 port:
-                  number: 5173
+                  number: 80
