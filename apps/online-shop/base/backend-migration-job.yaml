@@ -20,7 +20,7 @@ spec:
 
       containers:
         - name: migration
-          image: yazeeth/onlineshop-backend:v1.0.8
+          image: yazeeth/onlineshop-backend:v1.0.9
 
           envFrom:
             - secretRef:
