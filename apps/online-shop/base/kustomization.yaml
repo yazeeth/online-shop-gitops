@@ -14,7 +14,7 @@ resources:
   - frontend-service.yaml
   - backend-uploads-pvc.yaml
   - ingress.yaml
-  - ../../cert-manager/clusterissuer-letsencrypt-prod.yaml
+  - clusterissuer-letsencrypt-prod.yaml
 #  - backend-secret.example.yaml
 #  - postgres-secret.example.yaml
 
