@@ -4,9 +4,16 @@ kind: Ingress
 metadata:
   name: online-shop-ingress
   namespace: online-shop
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 
 spec:
   ingressClassName: traefik
+
+  tls:
+    - hosts:
+        - store.yazeeth.org.lk
+      secretName: store-yazeeth-org-lk-tls
 
   rules:
     - host: store.yazeeth.org.lk
@@ -19,7 +26,6 @@ spec:
                 name: online-shop-backend
                 port:
                   number: 5050
-
           - path: /uploads
             pathType: Prefix
             backend:
@@ -27,7 +33,6 @@ spec:
                 name: online-shop-backend
                 port:
                   number: 5050
-
           - path: /
             pathType: Prefix
             backend:
