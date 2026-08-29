@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: yazeeth/onlineshop-frontend:v1.0.9
+          image: yazeeth/onlineshop-frontend:v1.0.10
 
           ports:
             - containerPort: 80
