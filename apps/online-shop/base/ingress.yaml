@@ -12,11 +12,11 @@ spec:
 
   tls:
     - hosts:
-        - store.yazeeth.org.lk
+        - shop.yazeeth.com
       secretName: store-yazeeth-org-lk-tls
 
   rules:
-    - host: store.yazeeth.org.lk
+    - host: shop.yazeeth.com
       http:
         paths:
           - path: /api
